@@ -1,0 +1,130 @@
+:root {
+    --bg-light: #f1f5f9;
+    --panel-bg: #ffffff;
+    --text-dark: #1e293b;
+    --stroke-dark: #1e293b;
+    --pop-blue: #00f0ff;
+    --pop-green: #06d6a0;
+    --pop-yellow: #ffb703;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+}
+
+body {
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.player-container {
+    background-color: var(--panel-bg);
+    padding: 30px 20px;
+    border-radius: 24px;
+    border: 3px solid var(--stroke-dark);
+    box-shadow: 6px 6px 0px var(--stroke-dark);
+    max-width: 460px;
+    width: 100%;
+}
+
+.player-header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.player-header h1 {
+    font-size: 1.8rem;
+    font-weight: 900;
+}
+
+.player-header p {
+    font-size: 0.85rem;
+    color: #64748b;
+    margin-top: 4px;
+    line-height: 1.4;
+}
+
+/* --- DECK LAYOUT KARTU AUDIO --- */
+.sound-deck {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.sound-card {
+    background-color: #ffffff;
+    border: 2px solid var(--stroke-dark);
+    border-radius: 16px;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 3px 3px 0px var(--stroke-dark);
+    transition: all 0.2s ease;
+}
+
+.card-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.sound-icon {
+    font-size: 2rem;
+    background-color: #f8fafc;
+    border: 2px solid var(--stroke-dark);
+    padding: 6px;
+    border-radius: 12px;
+}
+
+.sound-details h3 {
+    font-size: 1.05rem;
+    font-weight: 800;
+}
+
+.sound-details p {
+    font-size: 0.8rem;
+    color: #64748b;
+    font-weight: 600;
+    margin-top: 2px;
+}
+
+/* Tombol Kontrol Audio */
+.btn-play-state {
+    background-color: var(--pop-blue);
+    color: var(--text-dark);
+    border: 2px solid var(--stroke-dark);
+    padding: 8px 14px;
+    font-size: 0.8rem;
+    font-weight: 800;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 2px 2px 0px var(--stroke-dark);
+    transition: all 0.1s ease;
+    outline: none;
+}
+
+.btn-play-state:hover {
+    transform: translateY(-1px);
+    box-shadow: 3px 3px 0px var(--stroke-dark);
+}
+
+/* --- KELAS STATUS SEANG BERMAIN (AKTIF VIA JS) --- */
+.sound-card.playing {
+    background-color: #fafafa;
+    border-color: var(--stroke-dark);
+    box-shadow: 1px 1px 0px var(--stroke-dark);
+    transform: translate(2px, 2px);
+}
+
+.sound-card.playing .btn-play-state {
+    background-color: var(--pop-green);
+}
